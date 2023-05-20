@@ -14,6 +14,8 @@ After the `localnet` is started, open DappFlow using
 algokit explore
 ```
 
+## Setup wallet
+
 DappFlow will be opened in Chrome which looks like this
 ![dappflow](dappflow.png)
 
@@ -22,6 +24,8 @@ On DappFlow, choose **Dev Wallets** on the side menu and choose **Create wallet*
 
 Then, we will connect to this wallet by hitting the **Connect wallet** button on the bottom left corner and choose the **Dev Wallet** option
 ![connect_wallet](connect_wallet.png)
+
+## Deploy smart contract
 
 As our `counter` smart contract is written in `beaker-pyteal`, we will use **Beaker studio** to deploy our smart contract.
 
