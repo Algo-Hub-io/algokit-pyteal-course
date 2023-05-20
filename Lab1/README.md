@@ -1,4 +1,4 @@
-# Lab 1 - Setup development environment
+# Lab 1 - Setup development environment with AlgoKit
 
 Hi everyone! The focus of this first lab is to setup your environment and get you comfortable working with the [AlgoKit](https://developer.algorand.org/algokit/) - as this will be really helpful when deploying, testing and experimenting with smart contracts.
 
@@ -14,6 +14,7 @@ These examples will be running on a machine running MacOS, but can also be used 
   - python 3.10+
   - pipx
 - **Recommended**:
+  - Homebrew
   - Chrome
   - Visual Studio Code
 
@@ -28,7 +29,7 @@ These examples will be running on a machine running MacOS, but can also be used 
 - **Recommended**:
   - Visual Studio Code
 
-The detailed tutorial of how to install AlgoKit on both operating systems can be found [here](https://developer.algorand.org/algokit/).
+> Follow [this link](https://developer.algorand.org/algokit/) for the detailed tutorial of how to install the prerequites for AlgoKit on both operating systems.
 
 ## Environment setup
 
@@ -36,110 +37,77 @@ For this exercise we will be using [AlgoKit](https://developer.algorand.org/algo
 
 Note: The instructions below assume you have the pre-requisites installed and that you are using the command line (terminal on MacOS/Ubuntu, or WSL2 on Windows).
 
-Some of the following is taken from the [Algorand Sandbox - Getting Started](https://github.com/algorand/sandbox#getting-started)) - we recommend you review their setup guide also.
+Open your terminal (WSL2 terminal for Windows), install AlgoKit tool
 
-Open your favourite terminal and make a directory for the course and change directory into it
+```bash
+# macOS
+brew install algorandfoundation/tap/algokit
+```
+
+```bash
+# Windows
+pipx install algokit
+```
+
+> :exclamation: After installation, you may need to close and reopen the terminal to use the `algokit` command.
+
+Then, we need to install `poetry` to make sure our process is smooth
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+Make a directory for the course and change directory into it
 
 ```bash
 mkdir algohub-pyteal
 cd algohub-pyteal
 ```
 
-Next we need to download the sandbox from git
+Inside this directory, we will initialize an AlgoKit project. Initializing an AlgoKit project allows us to:
+
+> - :point_right: Select dApp template.
+> - :point_right: Bootstrap toolchain
+> - :point_right: Compile source code
 
 ```bash
-git clone https://github.com/algorand/sandbox.git
+algokit init
 ```
 
-Now we clone this repo into the course directory
+We will choose the `playground` option which is the perfect choice for learning and playing around with smart contracts
+![choosing_smart_contract_template](./choose_template.png)
+
+Following the prompt, we will name our project and allow AlgoKit to setup the smart contract project template
+![config_smart_contract_project](./config_project.png)
+
+After finishing configuring, the project will be opened in Visual Studio Code
+![project_in_vscode](./project_vscode.png)
+
+Open the terminal in VS Code, use `poetry` to install dependencies for the project
 
 ```bash
-git clone https://github.com/Algo-Hub-io/algokit-pyteal-course.git
+poetry install
 ```
 
-We clone this repo so that you can access the scripts and contracts to deploy for the labs.
+![poetry_install](./poetry_install.png)
 
-Next, we need to update the sandbox file `docker-compose.yml` to allow us to access our files on our local machine from within the docker container.
+---
 
-To do this, open `sandbox/docker-compose.yml` and add the following to the end of the algod service.
-
-Existing Algod service;
-
-```
-  algod:
-    container_name: "algorand-sandbox-algod"
-    build:
-      context: .
-      dockerfile: ./images/algod/Dockerfile
-      args:
-        CHANNEL: "${ALGOD_CHANNEL}"
-        URL: "${ALGOD_URL}"
-        BRANCH: "${ALGOD_BRANCH}"
-        SHA: "${ALGOD_SHA}"
-        BOOTSTRAP_URL: "${NETWORK_BOOTSTRAP_URL}"
-        GENESIS_FILE: "${NETWORK_GENESIS_FILE}"
-        TEMPLATE: "${NETWORK_TEMPLATE:-images/algod/template.json}"
-        TOKEN: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-        ALGOD_PORT: "4001"
-        KMD_PORT: "4002"
-        CDT_PORT: "9392"
-    ports:
-      - 4001:4001
-      - 4002:4002
-      - 9392:9392
-```
-
-and add the following after ports
-
-```
-volumes:
-      - type: bind
-        source: ../pyteal-course
-        target: /data
-```
-
-This allows us to access the contents of our labs from within the algod docker box.
-
-Now, we get to bring our the sandbox.
-
-In the sandbox folder run the following in the terminal
+Troubleshooting: if you face the error `[Errno 2] No such file or directory: 'python'` on macOS, run the following command and restart the terminal:
 
 ```bash
-./sandbox up dev -v
+sudo ln -s /opt/homebrew/bin/python3 /opt/homebrew/bin/python
 ```
 
-This will download all of the relevant docker images and setup the sandbox - it can take a while, so we add the `-v` tag to the end so that it shows the steps it is taking.
+---
 
-Once that's done (could be 5-10 minutes), we enter the algod box.
+In VS Code, choose the python interpreter with `'.venv':poetry`
+![choose_python_interpreter](./choose_python_int.png)
 
-```bash
-./sandbox enter algod
-```
+:tada: Great! Our project is not all set and ready for smart contracts building!
 
-Now we're inside the algod container (this makes it easier to make with goal and tealdbg later in this Lab).
+[Compile smart contract]()
 
-Next we're going to get our account addresses.
+[Launch localnet]()
 
-First we get our accounts
-
-```bash
-goal account list
-```
-
-_Note: This is a dev environment that is just on your machine, so DO NOT send real algos or any assets to these addresses_
-
-Now we store each of these as an environment variable for use later (I will be using ONE, TWO, and THREE). These environment variables will dissappear if you end the session, so you may also want to record them elsewhere.
-
-To store environment variables, we use `export VAR_NAME=VARIABLE`, then to reference them later we use `$VAR_NAME`.
-
-This is what it looks like when I do it
-
-![Account list being stored in variables using the format export ONE=AccountNumber](./store_accounts_list.png)
-
-Great! Now we're ready for the other sections.
-
-[Creating and transferring assets](Assets.md)
-
-[Deploy and call a smart contract through the command line](./SmartContracts.md)
-
-[Using Tealdbg to step through a smart contract](./Tealdbg.md)
+[Deploy smart contract on DappFlow]()
