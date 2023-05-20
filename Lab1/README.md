@@ -64,11 +64,17 @@ mkdir algohub-pyteal
 cd algohub-pyteal
 ```
 
-Inside this directory, we will initialize an AlgoKit project. Initializing an AlgoKit project allows us to:
+Now, clone the repository `algokit-pyteal-course` from AlgoHUB. It contains some materials that will help us along the course
 
-> - :point_right: Select dApp template.
-> - :point_right: Bootstrap toolchain
-> - :point_right: Compile source code
+```bash
+git clone https://github.com/Algo-Hub-io/algokit-pyteal-course.git
+```
+
+Then, we will initialize an AlgoKit project. Initializing an AlgoKit project allows us to:
+
+> - :point_right: Select smart contract template.
+> - :point_right: Bootstrap toolchain.
+> - :point_right: Compile smart contract source code.
 
 ```bash
 algokit init
@@ -104,10 +110,10 @@ sudo ln -s /opt/homebrew/bin/python3 /opt/homebrew/bin/python
 In VS Code, choose the python interpreter with `'.venv':poetry`
 ![choose_python_interpreter](./choose_python_int.png)
 
-:tada: Great! Our project is not all set and ready for smart contracts building!
+> :exclamation: You may need to close and reopen the terminal to make sure all changes are updated.
 
-[Compile smart contract]()
+:tada: Great! Our playground project is now all set and ready for smart contracts building!
 
-[Launch localnet]()
+[Compile smart contract](compile_smart_contract.md)
 
 [Deploy smart contract on DappFlow]()
