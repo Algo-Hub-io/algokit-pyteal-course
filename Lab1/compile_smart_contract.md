@@ -3,7 +3,7 @@
 ## Compile beaker-pyteal smart contract
 
 To start, let's create a new folder in the `playground` directory for our smart contract and name it `counter`
-![make_counter_folder](counter_folder.png)
+![make_counter_folder](make_counter_folder.png)
 
 Now, head to the `algokit-pyteal-course` repository that we cloned in the previous module and navigate to Lab1 folder.
 
@@ -22,6 +22,6 @@ python3 counter.py
 ```
 
 The contract after being compiled will produce 4 new files inside the `artifacts` folder
-![compiled_contract](compile_contract.png)
+![compiled_contract](compiled_contract.png)
 
 Those files will be used in the next module to deploy the smart contract.
