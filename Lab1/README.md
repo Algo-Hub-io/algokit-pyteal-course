@@ -116,4 +116,4 @@ In VS Code, choose the python interpreter with `'.venv':poetry`
 
 [Compile smart contract](compile_smart_contract.md)
 
-[Deploy smart contract on DappFlow]()
+[Deploy smart contract on DappFlow](deploy_contract.md)
