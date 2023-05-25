@@ -31,6 +31,7 @@ Now, we can use the **Beaker studio** to deploy our counter smart contract on th
 ![beaker_studio](beaker_studio.png)
 
 Choosing **Create app** will produce a popup in your **Pera Wallet** mobile app. This is a prompt for users to confirm their transactions on the blockchain
+
 ![pera_mobile_prompt](mobile_confirm.jpeg)
 
 Choose **Confirm** to let the transaction go through. After successfully deployed, the smart contract will be available on the Algorand Testnet with a unique id.
