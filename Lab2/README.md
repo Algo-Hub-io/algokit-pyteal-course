@@ -31,6 +31,6 @@ In this tutorial, we are going to be deploying our smart contract to the Algoran
 
 Now that Pera Wallet is setup, we're reading to move onto the next steps.
 
-[Connect AlgoKit to Testnet and deploy](testnetDeploy.md.md)
+[Connect AlgoKit to Testnet and deploy](testnetDeploy.md)
 
 [Modify the Counter App template to work with your app](counterApp.md)
