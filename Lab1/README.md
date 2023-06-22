@@ -64,12 +64,6 @@ mkdir algohub-pyteal
 cd algohub-pyteal
 ```
 
-Now, clone the repository `algokit-pyteal-course` from AlgoHUB. It contains some materials that will help us along the course
-
-```bash
-git clone https://github.com/Algo-Hub-io/algokit-pyteal-course.git
-```
-
 Then, we will initialize an AlgoKit project. Initializing an AlgoKit project allows us to:
 
 > - :point_right: Select smart contract template.

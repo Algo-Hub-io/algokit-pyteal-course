@@ -1,15 +1,21 @@
 # Compile smart contract
 
+In the `algohub-pyteal` directory, clone the repository `algokit-pyteal-course` from AlgoHUB. It contains some materials that will help us along the course
+
+```bash
+git clone https://github.com/Algo-Hub-io/algokit-pyteal-course.git
+```
+
 ## Compile beaker-pyteal smart contract
 
-To start, let's create a new folder in the `playground` directory for our smart contract and name it `counter`
+Now, let's create a new folder in the `playground` directory for our smart contract and name it `counter`
 ![make_counter_folder](make_counter_folder.png)
 
-Now, head to the `algokit-pyteal-course` repository that we cloned in the previous module and navigate to Lab1 folder.
+Now, head to the `algokit-pyteal-course` directory that we just cloned and navigate to `Lab1` folder.
 
-Navigate the `counter.py` file, copy it and paste it into the `counter` folder in our `playground`
+Find the `counter.py` file, copy and paste it into the **counter** folder in our `playground`
 
-In the terminal, navigate into the counter folder
+In the terminal, change directory into the **counter** folder
 
 ```bash
 cd playground/counter
