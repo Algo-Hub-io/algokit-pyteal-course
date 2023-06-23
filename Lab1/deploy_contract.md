@@ -27,11 +27,11 @@ Then, we will connect to this wallet by hitting the **Connect wallet** button on
 
 ## Deploy smart contract
 
-As our `counter` smart contract is written in `beaker-pyteal`, we will use **Beaker studio** to deploy our smart contract.
+As our `helloworld` smart contract is written in `beaker-pyteal`, we will use **Beaker studio** to deploy our smart contract.
 
 Choose **Beaker studio** on the side menu , choose **Select app** > **Import beaker app** > Switch to **File** > choose **Upload file**
 
-Navigate to the `counter` folder in our `playground` and choose to upload the `application.json` file inside the `artifacts` folder. After uploading, **Beaker studio** will look like this
+Navigate to the `hello_world` folder in our `playground` and choose to upload the `application.json` file inside the `artifacts` folder. After uploading, **Beaker studio** will look like this
 ![beaker_studio](beaker_studio.png)
 
 Now, choose **Create app** > **Create** to deploy the smart contract.
