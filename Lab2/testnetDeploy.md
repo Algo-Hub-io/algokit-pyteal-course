@@ -1,5 +1,13 @@
 # Deploy smart contract on Algorand Testnet
 
+## Clone smart contracts material
+
+To start with, we need to clone the repository that have the materials from AlgoHub.
+
+```bash
+git clone https://github.com/Algo-Hub-io/algokit-pyteal-course.git
+```
+
 ## Connect to Algorand Testnet
 
 Make sure your Docker daemon is running on th background. In the terminal, use AlgoKit to start the `localnet` with
